@@ -23,8 +23,23 @@
 <body>
   <div id="app">
     <h1>Blockchain Data</h1>
+    <input type="text" id="btc-address" placeholder="Enter Bitcoin address">
+    <button onclick="checkBalance()">Check Balance</button>
+    <div id="balance"></div>
   </div>
   <script>
+    function checkBalance() {
+      var address = document.getElementById('btc-address').value;
+      axios.get('https://blockchain.info/rawaddr/' + address)
+        .then(function (response) {
+          var balance = response.data.final_balance / 100000000; // Convert satoshi to BTC
+          document.getElementById('balance').textContent = 'Balance: ' + balance + ' BTC';
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
     axios.get('https://blockchain.info/ticker')
       .then(function (response) {
         var data = response.data;
