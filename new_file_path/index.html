@@ -23,9 +23,11 @@
 <body>
   <div id="app">
     <h1>Blockchain Data</h1>
-    <input type="text" id="btc-address" placeholder="Enter Bitcoin address">
-    <button onclick="checkBalance()">Check Balance</button>
-    <div id="balance"></div>
+    <div style="margin-top: 20px;">
+      <input type="text" id="btc-address" placeholder="Enter Bitcoin address" style="padding: 10px; width: 70%;">
+      <button onclick="checkBalance()" style="padding: 10px; width: 25%; margin-left: 5%; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Check Balance</button>
+    </div>
+    <div id="balance" style="margin-top: 20px;"></div>
   </div>
   <script>
     function checkBalance() {
