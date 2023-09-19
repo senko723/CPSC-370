@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blockchain Data</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    axios.get('https://blockchain.info/ticker')
+      .then(function (response) {
+        var data = response.data;
+        var app = document.getElementById('app');
+        for (var key in data) {
+          var div = document.createElement('div');
+          div.textContent = key + ': ' + data[key].last + ' ' + data[key].symbol;
+          app.appendChild(div);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  </script>
+</body>
+</html>
