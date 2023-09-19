@@ -2,10 +2,28 @@
 <html>
 <head>
   <title>Blockchain Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #app {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .currency {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <h1>Blockchain Data</h1>
+  </div>
   <script>
     axios.get('https://blockchain.info/ticker')
       .then(function (response) {
@@ -13,6 +31,7 @@
         var app = document.getElementById('app');
         for (var key in data) {
           var div = document.createElement('div');
+          div.className = 'currency';
           div.textContent = key + ': ' + data[key].last + ' ' + data[key].symbol;
           app.appendChild(div);
         }
