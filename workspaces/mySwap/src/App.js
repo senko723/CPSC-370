@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from './chapman_panther.png';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
         <input
           className="search-bar"
           type="text"
