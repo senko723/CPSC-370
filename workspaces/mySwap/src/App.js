@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  }, [count]);
-
   return (
     <div className="App">
       <header className="App-header">
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-          Click me
-        </button>
-        <img src="./chapman_panther.png" alt="Chapman Panther" />
+        <p>Uniswap functionality will go here</p>
       </header>
     </div>
   );
