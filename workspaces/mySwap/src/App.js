@@ -20,6 +20,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <input
+          className="search-bar"
           type="text"
           value={search}
           onChange={handleSearchChange}
