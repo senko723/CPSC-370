@@ -13,8 +13,29 @@ function App() {
   ]);
   const filteredTokens = tokens.filter(token => token.toLowerCase().includes(search.toLowerCase()));
 
+  const [selectedToken, setSelectedToken] = useState(tokens[0]);
+  const [amount, setAmount] = useState(0);
+  const [selectedToken2, setSelectedToken2] = useState(tokens[1]);
+  const [amount2, setAmount2] = useState(0);
+
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
+  };
+
+  const handleTokenChange = (event) => {
+    setSelectedToken(event.target.value);
+  };
+
+  const handleAmountChange = (event) => {
+    setAmount(event.target.value);
+  };
+
+  const handleToken2Change = (event) => {
+    setSelectedToken2(event.target.value);
+  };
+
+  const handleSwap = () => {
+    // Swap logic goes here
   };
 
   return (
@@ -29,7 +50,17 @@ function App() {
           placeholder="Search tokens and NFT collections..."
         />
         {filteredTokens.map(token => <p key={token}>{token}</p>)}
-        <p>Uniswap functionality will go here</p>
+        <div className="swap-container">
+          <select value={selectedToken} onChange={handleTokenChange}>
+            {tokens.map(token => <option key={token} value={token}>{token}</option>)}
+          </select>
+          <input type="number" value={amount} onChange={handleAmountChange} />
+          <select value={selectedToken2} onChange={handleToken2Change}>
+            {tokens.map(token => <option key={token} value={token}>{token}</option>)}
+          </select>
+          <input type="number" value={amount2} readOnly />
+          <button onClick={handleSwap}>Swap</button>
+        </div>
       </header>
     </div>
   );
