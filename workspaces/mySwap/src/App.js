@@ -50,15 +50,19 @@ function App() {
           {tokens.map(token => <option key={token} value={token}>{token}</option>)}
         </select>
         <div className="swap-container">
-          <select value={selectedToken} onChange={handleTokenChange}>
-            {tokens.map(token => <option key={token} value={token}>{token}</option>)}
-          </select>
-          <input type="number" value={amount} onChange={handleAmountChange} />
-          <select value={selectedToken2} onChange={handleToken2Change}>
-            {tokens.map(token => <option key={token} value={token}>{token}</option>)}
-          </select>
-          <input type="number" value={amount2} readOnly />
-          <button onClick={handleSwap}>Swap</button>
+          <div className="swap-input">
+            <select value={selectedToken} onChange={handleTokenChange}>
+              {tokens.map(token => <option key={token} value={token}>{token}</option>)}
+            </select>
+            <input type="number" value={amount} onChange={handleAmountChange} />
+          </div>
+          <button className="swap-button" onClick={handleSwap}>Swap</button>
+          <div className="swap-output">
+            <select value={selectedToken2} onChange={handleToken2Change}>
+              {tokens.map(token => <option key={token} value={token}>{token}</option>)}
+            </select>
+            <input type="number" value={amount2} readOnly />
+          </div>
         </div>
       </header>
     </div>
