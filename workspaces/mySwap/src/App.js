@@ -42,14 +42,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <input
+        <select
           className="search-bar"
-          type="text"
           value={search}
           onChange={handleSearchChange}
-          placeholder="Search tokens and NFT collections..."
-        />
-        {filteredTokens.map(token => <p key={token}>{token}</p>)}
+        >
+          {tokens.map(token => <option key={token} value={token}>{token}</option>)}
+        </select>
         <div className="swap-container">
           <select value={selectedToken} onChange={handleTokenChange}>
             {tokens.map(token => <option key={token} value={token}>{token}</option>)}
