@@ -56,7 +56,9 @@ function App() {
             </select>
             <input type="number" value={amount} onChange={handleAmountChange} />
           </div>
-          <button className="swap-button" onClick={handleSwap}>Swap</button>
+          <div className="swap-button-container">
+            <button className="swap-button" onClick={handleSwap}>Swap</button>
+          </div>
           <div className="swap-output">
             <select value={selectedToken2} onChange={handleToken2Change}>
               {tokens.map(token => <option key={token} value={token}>{token}</option>)}
