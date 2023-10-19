@@ -2,6 +2,8 @@
   text-align: center;
   background-image: url('./campus.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
 }
