@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #100E17;
+  background-image: url('./campus.jpg');
+  background-size: cover;
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
 }
